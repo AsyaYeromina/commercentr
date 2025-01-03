@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.13.3"
+  },
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "predeploy": "rm -rf dist && parcel build --public-url /repository-name/",
+    "deploy": "gh-pages -d dist"
+  }
+}
