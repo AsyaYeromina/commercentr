@@ -1,4 +1,211 @@
+/* Variables */
+:root {
+  /* Primary Colors */
+  --color-primary-dark100: #253000;
+  --color-primary-dark90: #324000;
+  --color-primary-dark80: #485C00;
+  --color-primary-dark70: #729100;
+  --color-primary-light100: #C8FF00;
+  --color-primary-light50: #E3FF7B;
+
+  /* Grey Shades */
+  --color-grey-100: #030404;
+  --color-grey-90: #101010;
+  --color-grey-85: #101515;
+  --color-grey-80: #1B1C19;
+  --color-grey-70: #31322F;
+  --color-grey-60: #3B4853;
+  --color-grey-50: #727E88;
+  --color-grey-30: #A3B1BC;
+  --color-grey-10: #E8ECF2;
+  --color-grey-0: #FFFFFF;
+
+  /* System Colors */
+  --color-system-error: #CD3E13;
+  --color-system-blue: #09A0C1;
+  --color-system-green: #008625;
+}
+
+/* -------------- Common Normalize Styles -------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "IBM Plex Sans Condensed","Roboto Condensed", Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  background-color: #101515;
-  color: #E8ECF2;
+  color: var(--color-grey-10);
+  background-color: var(--color-grey-100);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+img, picture, video, iframe {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus, a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+input, textarea, select, button {
+  font: inherit;
+  color: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+/*
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+} */
+
+/* ----------------------- Common Conponents styles ----------------------- */
+
+/* Buttons */
+.button {
+  display: inline-block;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  text-align: center;
+  cursor: pointer;
+  padding: 20px 46px;
+  background-color: var(--color-primary-dark90);
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark80);
+}
+
+.button:focus {
+  background-color: var(--color-primary-dark100);
+}
+
+.button--small {
+  font-size: 18px;
+  padding: 16px 32px;
+}
+
+.button--large {
+  padding: 24px 64px;
+}
+
+/* Containers */
+.container {
+  max-width: 1440px;
+  margin: 0;
+  padding: 0 112px;
+}
+
+/* Titles */
+
+.section-title {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 110%;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--color-primary-dark70);
+}
+
+.section-title--white {
+  font-family: "Tektur";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 92%;
+  letter-spacing: 3.36px;
+  color: var(--color-grey-10);
+}
+
+/* ----------------------- Section styles ---------------------------*/
+
+/*  Header */
+.header {
+  background-color: var(--color-grey-85);
+  padding: 28px 0;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__link {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 140%;
+  color: var(--color-grey-10);
+  padding: 24px;
+}
+
+/* Hero */
+.hero{
+  background-color: var(--color-grey-100);
+  padding: 80px 0;
 }
