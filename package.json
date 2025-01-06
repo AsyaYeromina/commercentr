@@ -9,7 +9,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "predeploy": "rm -rf dist && parcel build --public-url /commercentr/",
+    "predeploy": "rm -rf dist && parcel build --public-url /commercentr/ --no-content-hash",
     "deploy": "gh-pages -d dist"
   }
 }
