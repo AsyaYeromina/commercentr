@@ -49,7 +49,7 @@ html {
 
 body {
   color: var(--color-grey-10);
-  background-color: var(--color-grey-100);
+  background-color: var(--color-grey-85);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,10 +69,6 @@ ul, ol {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-a:focus, a:hover {
-  text-decoration: underline;
 }
 
 button {
@@ -139,7 +135,7 @@ select {
 /* Containers */
 .container {
   max-width: 1440px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0 112px;
 }
 
@@ -155,6 +151,7 @@ select {
   text-transform: uppercase;
   letter-spacing: 5px;
   color: var(--color-primary-dark70);
+  width: 40%;
 }
 
 .section-title--white {
@@ -182,6 +179,12 @@ select {
   align-items: center;
 }
 
+.header__logo {
+  flex-shrink: 0;
+  padding: 12px 32px 12px 0;
+  margin-right: 60px;
+}
+
 .header__nav{
   display: flex;
   flex-direction: row;
@@ -194,6 +197,7 @@ select {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .header__link {
@@ -202,10 +206,87 @@ select {
   line-height: 140%;
   color: var(--color-grey-10);
   padding: 24px;
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.header__link::after {
+  content: "";
+  position: absolute;
+  bottom: 14px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.header__link:hover::after {
+  background-color: var(--color-primary-dark70);
+}
+
+.header__link:focus::after {
+  background-color: var(--color-primary-light100);
+}
+
+.header__link--selected::after {
+  background-color: var(--color-primary-light100);
+}
+
+.header__language-container {
+  padding: 20px;
+}
+
+.header__call-button {
+  margin-left: 60px;
 }
 
 /* Hero */
 .hero{
   background-color: var(--color-grey-100);
-  padding: 80px 0;
+  padding: 160px 0;
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero__content {
+  width: 80%;
+}
+
+.hero__logo {
+  width: 60%;
+  margin: auto;
+}
+
+.hero__title {
+  margin-bottom: 80px;
+}
+
+.hero__description {
+  margin-bottom: 80px;
+}
+
+/* services */
+
+.services{
+  padding: 160px 0;
+}
+
+.services__title{
+  margin-bottom: 80px;
+}
+
+.services__grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.services__card {
+  background-color: var(--color-grey-80);
+  padding: 40px;
+  border-radius: 8px;
 }
