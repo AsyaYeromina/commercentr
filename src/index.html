@@ -169,15 +169,20 @@
         <section class="video">
           <div class="container">
             <h2 class="section-title section-title--white video__title">Відео</h2>
-            <div class="video__player">
-              <iframe
-                src="https://www.youtube.com/embed/your-video-id"
-                title="Video about our services"
-                allowfullscreen
-                frameborder="0"
-                loading="lazy"
-              >
-              </iframe>
+            <div class="video__container">
+              <div class="video__player">
+                <div class="video__iframe-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/your-video-id"
+                    title="Video about our services"
+                    allowfullscreen
+                    frameborder="0"
+                    loading="lazy"
+                    class="video__iframe"
+                  >
+                  </iframe>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -189,19 +194,19 @@
             <p class="projects__info">Побудова безпечних і катастрофостійких систем термінальних сервісів. Віртуалізація серверів,</p>
             <ul class="projects__grid">
               <li class="projects__card">
-                <img src="./img/project.png" alt="Project 1" class="projects__image">
+                <img src="./img/project_background.png" alt="Project 1" class="projects__image">
                 <span class="projects__text">Комерція</span>
               </li>
               <li class="projects__card">
-                <img src="./img/project.png" alt="Project 2" class="projects__image">
+                <img src="./img/project_background.png" alt="Project 2" class="projects__image">
                 <span class="projects__text">Комерція</span>
               </li>
               <li class="projects__card">
-                <img src="./img/project.png" alt="Project 3" class="projects__image">
+                <img src="./img/project_background.png" alt="Project 3" class="projects__image">
                 <span class="projects__text">Комерція</span>
               </li>
               <li class="projects__card">
-                <img src="./img/project.png" alt="Project 4" class="projects__image">
+                <img src="./img/project_background.png" alt="Project 4" class="projects__image">
                 <span class="projects__text">Комерція</span>
               </li>
             </ul>
@@ -211,11 +216,13 @@
         <!-- About Section -->
         <section class="about">
           <div class="container">
-            <h2 class="section-title section-title--white about__title">CEO Василь Биба</h2>
-            <p class="about__description">
-              Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і систем зберігання даних. Оцінка ІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації. систем Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і систем зберігання даних. Оцінка ІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації.
-            </p>
-            <a href="#contact" class="about__button button button--large">Заклик до дії</a>
+            <div class="about__inner-container">
+              <h2 class="section-title section-title--white about__title">CEO <br>Василь Биба</h2>
+              <p class="about__description">
+                Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і систем зберігання даних. Оцінка ІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації. систем Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і систем зберігання даних. Оцінка ІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації.
+              </p>
+              <a href="#contact" class="about__button button button--large">Заклик до дії</a>
+            </div>
           </div>
         </section>
 
@@ -249,83 +256,85 @@
         <section class="info">
           <div class="container">
             <h2 class="section-title section-title--white info__title">Лідер на IT ринку з 1949</h2>
-            <div class="info__description">
-              <p>
-                Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і систем зберігання даних. Оцінка ІТ-тек інфраструктури в різних аспектах, рекомендації щодо оптимізації. систем даних Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і даних систем зберігання даних. ОцінкаІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації. Побудова безпечних і додатків катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і даних систем зберігання даних. ОцінкаІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації. систем Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і даних систем зберігання даних. ОцінкаІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації.
-              </p>
-            </div>
+            <p class="info__description">
+              Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і систем зберігання даних. Оцінка ІТ-тек інфраструктури в різних аспектах, рекомендації щодо оптимізації. систем даних Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і даних систем зберігання даних. ОцінкаІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації. Побудова безпечних і додатків катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і даних систем зберігання даних. ОцінкаІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації. систем Побудова безпечних і катастрофостійких систем сервісів термінальних сервісів. Віртуалізація серверів, додатків, мереж і даних систем зберігання даних. ОцінкаІТ-інфраструктури в різних аспектах, рекомендації щодо оптимізації.
+            </p>
           </div>
         </section>
 
         <!-- Contact Form -->
         <section id="contact" class="contact">
           <div class="container">
-            <div class="contact__title-container"></div>
-              <h2 class="section-title contact__title">Анкета</h2>
-              <p>Заповни анкету, щоб отримати консультацію</p>
-            <form action="/submit" method="POST" class="contact__form">
-              <div class="form-group">
-                <label for="name" class="contact__label">Прізвище та ім'я</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  class="contact__input"
-                  required
-                >
+            <div class="contact__container">
+              <div class="contact__title-container">
+                <h2 class="section-title contact__title">Анкета</h2>
+                <p>Заповни анкету, щоб отримати консультацію</p>
               </div>
-              <div class="form-group">
-                <label for="phone" class="contact__label">Телефон</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  class="contact__input"
-                  required
-                >
-              </div>
-              <div class="form-group">
-                <label for="email" class="contact__label">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="contact__input"
-                  required
-                >
-              </div>
-              <div class="form-group">
-                <label for="contact-title" class="contact__label">Тайтл</label>
-                <select
-                  id="contact-title"
-                  name="options"
-                  class="contact__select"
-                  required
-                >
-                  <option value="" disabled selected>Вибрати</option>
-                  <option value="option1">Опція 1</option>
-                  <option value="option2">Опція 2</option>
-                  <option value="option3">Опція 3</option>
-                  <option value="option4">Опція 4</option>
-                </select>
-              </div>
-              <div class="form-group form-group--checkbox">
-                  <p class="contact__checkbox-description">
-                    Погоджуєтесь на умови співпраці:
-                  </p>
-                  <input
-                    class="contact__checkbox"
-                    type="checkbox"
-                    name="terms"
-                    id="agree"
-                    required
-                  >
-                  <label for="agree" class="contact__checkbox-label">Так</label>
-              </div>
-              <button type="submit" class="button button--large contact__button">
-                Отримати консультацію
-              </button>
-            </form>
+
+                <form action="/submit" method="POST" class="contact__form">
+                  <div class="form-group">
+                    <label for="name" class="contact__label">Прізвище та ім'я</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="contact__input"
+                      required
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label for="phone" class="contact__label">Телефон</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="contact__input"
+                      required
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="contact__label">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="contact__input"
+                      required
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-title" class="contact__label">Тайтл</label>
+                    <select
+                      id="contact-title"
+                      name="options"
+                      class="contact__select"
+                      required
+                    >
+                      <option value="" disabled selected>Вибрати</option>
+                      <option value="option1">Опція 1</option>
+                      <option value="option2">Опція 2</option>
+                      <option value="option3">Опція 3</option>
+                      <option value="option4">Опція 4</option>
+                    </select>
+                  </div>
+                  <div class="form-group form-group--checkbox">
+                      <p class="contact__checkbox-description">
+                        Погоджуєтесь на умови співпраці:
+                      </p>
+                      <input
+                        class="contact__checkbox"
+                        type="checkbox"
+                        name="terms"
+                        id="agree"
+                        required
+                      >
+                      <label for="agree" class="contact__checkbox-label">Так</label>
+                  </div>
+                  <button type="submit" class="button button--large contact__button">
+                    Отримати консультацію
+                  </button>
+                </form>
+            </div>
           </div>
         </section>
 
