@@ -35,6 +35,9 @@
   --medium-width: 768px; /* iPad */
   --medium-width-2: 1024px; /* iPad Pro / horizontal tablet */
   --small-width: 393px; /* iPhone 6/7/8 */
+
+  /* header */
+  --min-header-height: 82px;
 }
 /* #endregion */
 
@@ -66,6 +69,7 @@ body {
   color: var(--color-grey-10);
   background-color: var(--color-grey-85);
   position: relative;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -153,7 +157,7 @@ select {
 
 .button--small {
   font-size: 18px;
-  padding: 16px 32px;
+  padding: 12px 32px;
 }
 
 .button--large {
@@ -164,18 +168,22 @@ select {
 
 /* #region  ========= CONTAINER ======== */
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 112px;
 }
 
-.main-container {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  align-content: flex-start;
+main {
+  flex: 1
 }
+
 /*
 @media (min-width: 768px) {
   .wrapper {
@@ -223,10 +231,11 @@ select {
 
 .header {
   background-color: var(--color-grey-85);
-  padding: 16px 0;
+  padding: 12px 0;
   position: fixed;
   width: 100%;
   z-index: 1000;
+  min-height: var(--min-header-height);
 }
 
 .header-container {
@@ -304,7 +313,7 @@ select {
 
 .hero{
   background-color: var(--color-grey-100);
-  padding-top: 88px; /* header height */
+  padding-top: var(--min-header-height);
   min-height: calc(100vh);
 }
 
@@ -625,18 +634,6 @@ select {
   position: relative;
 }
 
-.info::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 80px;;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-image: url("../img/Logo_Vector.svg");
-  background-repeat: no-repeat;
-}
-
 .info-title {
   margin-bottom: 40px;
   text-transform: none;
@@ -647,6 +644,11 @@ select {
   text-align: left;
   width: 66%;
   margin: 0 auto;
+}
+
+.info-bottom-pic {
+  margin: 0 auto;
+  margin-top: 60px;
 }
 /* #endregion */
 
@@ -661,6 +663,7 @@ select {
 .contact-container {
   background-color: var(--color-grey-90);
   padding: 80px 100px;
+  padding-right: 130px;
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: 32px;
@@ -681,7 +684,7 @@ select {
 
 .form-label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 28px;
   order: -1;
   line-height: 1.5;
   font-size: 16px;
@@ -850,22 +853,22 @@ select {
 .card-role {
   color: var(--color-grey-30);
 }
+
 .card-link-container {
-  padding: 16px;
+  margin-top: 12px;
 }
 
 .social-links {
   display: flex;
-  gap: 24px;
 }
 
 .social-links-item {
   display: block;
-
 }
 
 .social-links-link {
   display: block;
+  padding: 14px;
 }
 
 .social-links-link svg {
@@ -919,6 +922,10 @@ select {
 .footer-address-link {
   display: block;
   margin-bottom: 20px;
+}
+
+.footer-link-container {
+  margin-left: -18px;
 }
 
 /* #endregion */
