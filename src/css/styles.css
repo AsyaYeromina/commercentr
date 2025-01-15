@@ -360,7 +360,7 @@ main {
 .services{
   padding: 160px 0;
   background-color: var(--color-grey-90);
-  padding-bottom: 80px;
+  padding-bottom: 0;
 }
 
 .services-title{
@@ -368,12 +368,12 @@ main {
   width: 50%;
 }
 
-.services-grid-container {
+/* .services-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   row-gap: 80px;
-}
+} */
 
 .services-link {
   display: block;
@@ -411,6 +411,8 @@ main {
 .video {
   background-color: var(--color-grey-90);
   padding: 160px 0;
+  padding-top: 120px;
+
 }
 
 .video-title {
@@ -492,11 +494,11 @@ main {
   margin-bottom: 80px;
 }
 
-.projects-grid{
+/* .projects-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-}
+} */
 
 .projects-card{
   position: relative;
@@ -835,12 +837,12 @@ main {
 .team-title {
   margin-bottom: 80px;
 }
-
+/*
 .team-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
-}
+} */
 
 .card {
   display: flex;
@@ -953,3 +955,83 @@ main {
 }
 
 /* #endregion */
+
+/* #region =========  SLIDERS CUSTOMIZATION ============ */
+.swiper-services .swiper-wrapper {
+  row-gap: 48px;
+}
+
+.swiper {
+  position: relative;
+}
+
+.swiper-slide {
+  height: 50%; /* Adjust height per row */
+
+}
+
+.swiper-navigation {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  display: flex;
+  min-height: 80px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  position: static;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin-top: auto;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("../img/arrow.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
+.swiper-button-prev:after {
+  transform: rotate(180deg);
+}
+
+.swiper-pagination {
+  min-height: 80px;
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
+  margin: 0 8px;
+  border-radius: 0;
+  background-color: var(--color-primary-dark70);
+  opacity: 1;
+  margin: 0 8px;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 6px;
+}
+
+.swiper-pagination-bullet-active {
+  width: 24px;
+  opacity: 1;
+}
+
+.swiper-projects .swiper-wrapper {
+  max-height: 600px;
+}
