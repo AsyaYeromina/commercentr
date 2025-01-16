@@ -382,6 +382,8 @@ main {
   background-color: var(--color-grey-80);
   position: relative;
   transition: background-color 0.3s ease;
+  height: fit-content;
+  min-height: 100%;
 }
 
 .services-link::after {
@@ -508,6 +510,11 @@ main {
 .projects-link {
   position: relative;
   display: block;
+  width: 100%;
+  min-height: 280px;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
 }
 
 .projects-link::before {
@@ -532,25 +539,24 @@ main {
   opacity: 0.2;
 }
 
-.projects-picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 .projects-image {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .projects-text {
   font-size: 24px;
-  position: absolute;
-  bottom: 12px;
-  left: 26px;
+  position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: flex-start;
+  padding: 32px;
+  width: 100%;
 }
 /* #endregion */
 
@@ -951,23 +957,18 @@ main {
 }
 
 .footer-link-container {
-  margin-left: -18px;
+  margin-left: -10px;
 }
 
+.footer-link-container .social-links-link {
+  padding: 10px;
+}
 /* #endregion */
 
 /* #region =========  SLIDERS CUSTOMIZATION ============ */
-.swiper-services .swiper-wrapper {
-  row-gap: 48px;
-}
-
+/* Common slider styles */
 .swiper {
   position: relative;
-}
-
-.swiper-slide {
-  height: 50%; /* Adjust height per row */
-
 }
 
 .swiper-navigation {
@@ -1032,6 +1033,19 @@ main {
   opacity: 1;
 }
 
+/* Services slider */
+
+.swiper-services .swiper-wrapper {
+  row-gap: 48px;
+  height: 580px;
+}
+
+.swiper-services .swiper-slide {
+  height: 220px !important;
+}
+
 .swiper-projects .swiper-wrapper {
   max-height: 600px;
 }
+
+/* #endregion */

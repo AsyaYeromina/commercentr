@@ -1,11 +1,11 @@
 const swiperServices = initializeSwiper('.swiper-services', {
-  grid: { rows: 2, fill: 'row' },
+  grid: { rows: 2, fill: 'column' },
   slidesPerView: 3,
   spaceBetween: 32,
 });
 
 const swiperProjects = initializeSwiper('.swiper-projects', {
-  grid: { rows: 2, fill: 'row' },
+  grid: { rows: 2, fill: 'column' },
   slidesPerView: 2,
   spaceBetween: 32,
 });
