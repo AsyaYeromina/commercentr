@@ -11,7 +11,7 @@ const swiperProjects = initializeSwiper('.swiper-projects', {
 });
 
 const swiperTeam = initializeSwiper('.swiper-team', {
-  grid: { rows: 1, fill: 'row' },
+  // grid: { rows: 1, fill: 'row' },
   slidesPerView: 4,
   spaceBetween: 32,
 });
