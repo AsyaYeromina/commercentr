@@ -101,6 +101,7 @@
       </header>
 
       <main>
+        <h1 class="visually-hidden">Commercenter</h1>
         <!-- Hero Section -->
         <section class="hero">
           <div class="container">
@@ -638,6 +639,7 @@
 
                 <form action="/submit" method="POST" class="contact-form form">
                   <div class="form-group">
+                    <label for="name" class="form-label">Прізвище та ім'я</label>
                     <input
                       type="text"
                       id="name"
@@ -645,9 +647,9 @@
                       class="form-input form-input--error"
                       required
                     >
-                    <label for="name" class="form-label">Прізвище та ім'я</label>
                   </div>
                   <div class="form-group">
+                    <label for="phone" class="form-label">Телефон</label>
                     <input
                     type="tel"
                     id="phone"
@@ -655,9 +657,9 @@
                     class="form-input"
                     required
                     >
-                    <label for="phone" class="form-label">Телефон</label>
                   </div>
                   <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
                     <input
                       type="email"
                       id="email"
@@ -665,24 +667,29 @@
                       class="form-input"
                       required
                     >
-                    <label for="email" class="form-label">Email</label>
                   </div>
                   <div class="form-group">
                     <div class="form-select-container">
-                      <select
-                        id="form-title"
-                        name="options"
-                        class="form-select"
-                        required
-                      >
-                        <option value="" disabled selected>Вибрати</option>
-                        <option value="option1">Опція 1</option>
-                        <option value="option2">Опція 2</option>
-                        <option value="option3">Опція 3</option>
-                        <option value="option4">Опція 4</option>
+                      <label for="select" class="form-label form-select-label">Тайтл</label>
+                      <select class="form-select select" id="select"
+                      data-custom required>
+                        <option class="form-select-option" value="hide">
+                          Вибрати
+                        </option>
+                        <option class="form-select-option" value="option1">
+                          Option 1
+                        </option>
+                        <option class="form-select-option" value="option2">
+                          Option 2
+                        </option>
+                        <option class="form-select-option" value="option3">
+                          Option 3
+                        </option>
+                        <option class="form-select-option" value="option4">
+                          Option 4
+                        </option>
                       </select>
                     </div>
-                  <label for="form-title" class="form-label form-select-label">Тайтл</label>
                   </div>
                   <div class="form-group form-group--checkbox">
                     <input
@@ -1200,5 +1207,14 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="js/slider.js"></script>
+    <script src="js/formSelect.js"></script>
+    <script>
+      document.querySelectorAll("input[required], select[required]").forEach(field => {
+  const label = document.querySelector(`label[for="${field.id}"]`);
+  if (label) {
+    label.innerHTML += ' <span>*</span>';
+  }
+});
+    </script>
   </body>
 </html>
