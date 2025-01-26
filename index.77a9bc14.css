@@ -713,7 +713,7 @@ main {
 
 .select-options {
   z-index: 999;
-  background-color: var(--color-grey-85);
+  background-color: var(--color-grey-90);
   margin: 0;
   padding: 8px;
   list-style: none;
