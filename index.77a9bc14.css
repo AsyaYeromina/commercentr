@@ -630,11 +630,7 @@ main {
   margin-bottom: 24px;
 }
 
-.form-checkbox-link {
-  color: var(--color-system-blue);
-}
-
-.form-checkbox-link:hover {
+.form-checkbox-link, .form-checkbox-link:hover {
   text-decoration: underline;
 }
 
@@ -676,6 +672,7 @@ main {
   width: 100%;
   height: 40px;
   font-size: 16px;
+  font-weight: 400;
   display: inline-block;
   position: relative;
 }
