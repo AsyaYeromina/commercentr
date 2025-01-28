@@ -152,13 +152,13 @@ select {
   text-align: center;
   cursor: pointer;
   padding: 18px 46px;
-  background-color: var(--color-primary-dark90);
+  background-color: var(--color-primary-dark80);
   transition: background-color 0.3s ease;
   color: var(--color-grey-0);
 }
 
 .button:hover {
-  background-color: var(--color-primary-dark80);
+  background-color: var(--color-primary-dark90);
   transition: background-color 0.3s ease;
 }
 
@@ -633,6 +633,7 @@ main {
   letter-spacing: 0.14px;
   color: var(--color-grey-10);
   text-align: center;
+  letter-spacing: 2px;
 }
 /* #endregion */
 
@@ -689,7 +690,8 @@ main {
 .form-group {
   display: flex;
   flex-direction: column;
-  padding-left: 8px;
+  margin-bottom: 12px;
+  position: relative;
 }
 
 .form-label {
@@ -701,19 +703,54 @@ main {
 }
 
 .form-input {
-  margin-bottom: 48px;
   background-color: inherit;
   color: var(--color-grey-0);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  padding: 12px 16px;
+  padding: 6px 16px;
 }
+
+.form-input:focus {
+  border-bottom: 1px solid var(--color-system-blue);
+}
+
+.form-input-error {
+  height: 48px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 0;
+}
+
+.form-group--error .form-input {
+  border-bottom: 1px solid var(--color-system-error);
+}
+
+.form-input-error-text {
+  display: none;
+}
+
+.form-group--error .form-input-error-text {
+  display: inline;
+}
+
+.form-input-error {
+  color: var(--color-system-error);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 8px;
+  position: relative;
+}
+
 
 .form-group--checkbox {
   display: flex;
   flex-direction: row;
   gap: 12px;
+  align-items: center;
 }
 
 .form-input,
@@ -727,7 +764,8 @@ main {
 }
 
 .form-group--checkbox {
-  margin-bottom: 38px;
+  margin-bottom: 56px;
+  padding-left: 8px;
 }
 
 .form-checkbox-container {
@@ -745,52 +783,62 @@ main {
 
 .form-checkbox:checked::after {
   content: "";
-  position: absolute;
-  display: block;
-  width: 6px;
-  height: 12px;
-  left: 6px;
-  top: 2px;
-  border: solid white;
+  border: 1px solid #fff;
   border-width: 0 2px 2px 0;
+  width: 4px;
+  height: 9px;
+  transition: opacity .2s ease-in-out;
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 7px;
   transform: rotate(45deg);
-  transition: opacity 0.2s ease-in-out;
 }
 
 .form-checkbox-label {
-  margin-bottom: 24px;
+  margin: 0;
+  padding: 0;
 }
 
 .form-checkbox-link {
-  color: var(--color-system-blue);
+  text-decoration: underline;
 }
 
 .form-checkbox-link:hover {
   text-decoration: underline;
 }
 
-.form-input:focus {
-  border-bottom: 1px solid var(--color-system-blue);
+/* to override browser's autofill styles */
+/* General input styles */
+.form-input {
+  background-color: var(--color-grey-90) !important;
+  color: var(--color-grey-10) !important;
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
 }
 
-.form-input--error {
-  border-bottom: 1px solid var(--color-system-error);
-  position: relative;
+/* Chrome, Safari autofill styles */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus {
+  background-color: var(--color-grey-90) !important;
+  color: var(--color-grey-10) !important;
 }
 
-.form-input--error::after {
-  content: "Please enter a valid data";
-  color: var(--color-system-error);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-top: 8px;
-  position: absolute;
+/* Firefox autofill styles */
+.form-input:-moz-autofill {
+  background-color: var(--color-grey-90) !important;
+  color: var(--color-grey-10) !important;
+}
+
+/* Edge autofill styles */
+.form-input:-ms-input-placeholder {
+  background-color: var(--color-grey-90) !important;
+  color: var(--color-grey-10) !important;
 }
 
 /* --------------------------  CUSTOM SELECT ---------------------------------*/
 .form-select-container {
-  margin-bottom: 64px;
+  margin-bottom: 48px;
 }
 
 .form-select-label {
@@ -810,6 +858,7 @@ main {
   font-size: 16px;
   width: 100%;
   height: 40px;
+  font-weight: 400;
 }
 
 .select-styled {
@@ -822,7 +871,11 @@ main {
   padding: 12px 16px;
   transition: all 0.2s ease-in;
   border-bottom: 1px solid var(--color-grey-30);
-  color: var(--color-grey-50);
+  font-family: var(--font-primary);
+}
+
+.form-group--error .select-styled {
+  border-bottom: 1px solid var(--color-system-error);
 }
 
 .select-styled:after {
@@ -860,9 +913,8 @@ main {
   left: 0;
   z-index: 999;
   margin: 0;
-  padding: 8px;
   list-style: none;
-  background-color: var(--color-grey-85);
+  background-color: var(--color-grey-80);
 }
 
 .select-options li {
@@ -933,6 +985,7 @@ main {
 
 .card-role {
   color: var(--color-grey-30);
+  font-size: 16px;
 }
 
 .card-link-container {
@@ -1002,6 +1055,10 @@ main {
   line-height: 1.5;
 }
 
+.footer-link {
+  padding: 12px;
+}
+
 .footer-contacts {
   font-weight: 400;
   font-size: 14px;
@@ -1010,6 +1067,7 @@ main {
 .footer-contacts-text {
   font-weight: 600;
   margin-bottom: 20px;
+  color: var(--color-grey-0);
 }
 
 .footer-address-link {
@@ -1104,7 +1162,7 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-auto-flow: column;
-  row-gap: 48px;
+  /* row-gap: 48px; */
 }
 
 .swiper-services .swiper-slide {

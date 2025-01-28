@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
       name="description"
       content="Commercentr corporate website with information about services, projects, and team."
     />
+    <meta name="keywords" content="Commercentr, corporate services, projects, business solutions">
     <title>Commercentr</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="icon" href="/src/img/favicon.png" type="image/png">
   </head>
   <body>
     <div class="main-container">
@@ -162,7 +164,7 @@
                     aria-label="Читати більше про послугу"
                     tabindex="0"
                     >
-                    3 Побудова безпечних і систем термінальних сервісів. Додатків Віртуалізація серверів, додатків, мереж і систем даних. Додатків Віртуалізація серверів, додатків, мереж і систем даних.
+                    3 Побудова безпечних і систем термінальних сервісів. Додатків Віртуалізація серверів, додатків, мереж і систем даних.
                   </a>
                 </li>
                 <li class="services-card swiper-slide">
@@ -213,7 +215,6 @@
                     tabindex="0"
                     >
                     8 Побудова безпечних і систем термінальних сервісів. Додатків Віртуалізація серверів, додатків, мереж і систем даних.
-                    8 Побудова безпечних і систем термінальних сервісів.
                   </a>
                 </li>
                 <li class="services-card swiper-slide">
@@ -637,43 +638,61 @@
                 <p>Заповни анкету, щоб отримати консультацію</p>
               </div>
 
-                <form action="/submit" method="POST" class="contact-form form">
+                <form id="form" action="/>" method="POST" class="contact-form form" novalidate>
                   <div class="form-group">
                     <label for="name" class="form-label">Прізвище та ім'я</label>
                     <input
                       type="text"
+                      required
                       id="name"
                       name="name"
-                      class="form-input form-input--error"
-                      required
+                      class="form-input"
                     >
+                    <div class="form-input-error">
+                      <span class="form-input-error-text">
+                        Ім'я має містити тільки літери, більше 2х знаків
+                        <!-- This error text is hidden by default and shown when the field is empty or filled in a wrong way -->
+                      </span>
+                    </div>
                   </div>
                   <div class="form-group">
                     <label for="phone" class="form-label">Телефон</label>
                     <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    class="form-input"
-                    required
+                      type="text"
+                      required
+                      id="phone"
+                      name="phone"
+                      class="form-input"
                     >
+                    <div class="form-input-error">
+                      <span class="form-input-error-text">
+                        Номер телефону у цифровому форматі, мінімум 10 цифр (наприклад 000 000 00 00)
+                        <!-- This error text is hidden by default and shown when the field is empty or filled in a wrong way -->
+                      </span>
+                    </div>
                   </div>
                   <div class="form-group">
                     <label for="email" class="form-label">Email</label>
                     <input
-                      type="email"
+                      type="text"
+                      required
                       id="email"
                       name="email"
                       class="form-input"
-                      required
                     >
+                    <div class="form-input-error">
+                      <span class="form-input-error-text">
+                        E-mail адреса має містити @ та адресу після знаку (наприклад example@gmail.com)
+                        <!-- This error text is hidden by default and shown when the field is empty or filled in a wrong way -->
+                      </span>
+                    </div>
                   </div>
                   <div class="form-group">
                     <div class="form-select-container">
                       <label for="select" class="form-label form-select-label">Тайтл</label>
                       <select class="form-select select" id="select"
                       data-custom required>
-                        <option class="form-select-option" value="hide">
+                        <option class="form-select-option" value="placeholder">
                           Вибрати
                         </option>
                         <option class="form-select-option" value="option1">
@@ -873,7 +892,7 @@
                     />
                   </picture>
                   <div class="card-description">
-                    <p class="card-role">Frontend Developer Developer</p>
+                    <p class="card-role">Frontend Developer</p>
                     <p class="card-name">Анастасія Єрьоміна Єрьоміна</p>
                     <ul class="card-link-container social-links">
                       <li class="social-links-item">
@@ -1205,16 +1224,8 @@
         </div>
       </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="module" src="js/slider.js"></script>
-    <script src="js/formSelect.js"></script>
-    <script>
-      document.querySelectorAll("input[required], select[required]").forEach(field => {
-  const label = document.querySelector(`label[for="${field.id}"]`);
-  if (label) {
-    label.innerHTML += ' <span>*</span>';
-  }
-});
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
