@@ -30,26 +30,26 @@ form.addEventListener("submit", async (e) => {
   };
 
   // Submit form data via AJAX
-  try {
-    const response = await fetch("https://api-endpoint...", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+  // try {
+  //   const response = await fetch("https://api-endpoint...", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(formData),
+  //   });
 
-    if (!response.ok) {
-      throw new Error(`Error: ${response.statusText}`);
-    }
+  //   if (!response.ok) {
+  //     throw new Error(`Error: ${response.statusText}`);
+  //   }
 
-    const result = await response.json();
-    console.log("Success:", result);
+  //   const result = await response.json();
+  //   console.log("Success:", result);
 
-    alert("Дякуємо за звернення, ми вас сповістимо на вказаний e-mail!");
-    form.reset();
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("Сталась помилка при відправленні форми. Спробуйте ще раз");
-  }
+  //   alert("Дякуємо за звернення, ми вас сповістимо на вказаний e-mail!");
+  //   form.reset();
+  // } catch (error) {
+  //   console.error("Error submitting form:", error);
+  //   alert("Сталась помилка при відправленні форми. Спробуйте ще раз");
+  // }
 });
 
 // Validate All Inputs
