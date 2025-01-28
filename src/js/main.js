@@ -31,9 +31,9 @@ form.addEventListener("submit", async (e) => {
 
   // Submit form data via AJAX
   try {
-    const response = await fetch('https://api-endpoint...', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const response = await fetch("https://api-endpoint...", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
 
@@ -42,13 +42,13 @@ form.addEventListener("submit", async (e) => {
     }
 
     const result = await response.json();
-    console.log('Success:', result);
+    console.log("Success:", result);
 
-    alert('Дякуємо за звернення, ми вас сповістимо на вказаний e-mail!');
+    alert("Дякуємо за звернення, ми вас сповістимо на вказаний e-mail!");
     form.reset();
   } catch (error) {
-    console.error('Error submitting form:', error);
-    alert('Сталась помилка при відправленні форми. Спробуйте ще раз');
+    console.error("Error submitting form:", error);
+    alert("Сталась помилка при відправленні форми. Спробуйте ще раз");
   }
 });
 
