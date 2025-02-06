@@ -1,19 +1,54 @@
 const swiperServices = initializeSwiper('.swiper-services', {
-  grid: { rows: 2, fill: 'column' },
-  slidesPerView: 3,
+  slidesPerView: 1.25,
   spaceBetween: 32,
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2.5,
+    },
+    1024: {
+      slidesPerView: 3.5,
+    },
+    1440: {
+      grid: { rows: 2, fill: 'column' },
+      slidesPerView: 3,
+    }
+  }
 });
 
 const swiperProjects = initializeSwiper('.swiper-projects', {
-  grid: { rows: 2, fill: 'column' },
-  slidesPerView: 2,
+  slidesPerView: 1.3,
   spaceBetween: 32,
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2.5,
+    },
+    1024: {
+      slidesPerView: 3.5,
+    },
+    1440: {
+      grid: { rows: 2, fill: 'column' },
+      slidesPerView: 3,
+    }
+  }
 });
 
 const swiperTeam = initializeSwiper('.swiper-team', {
-  // grid: { rows: 1, fill: 'row' },
   slidesPerView: 4,
   spaceBetween: 32,
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2.5,
+    },
+    1024: {
+      slidesPerView: 3.5,
+    },
+    1440: {
+      slidesPerView: 3,
+    }
+  }
 });
 
 
@@ -22,6 +57,8 @@ function initializeSwiper(selector, config) {
     grid: config.grid || { rows: 1, fill: 'row' },
     slidesPerView: config.slidesPerView || 1,
     spaceBetween: config.spaceBetween || 0,
+    breakpoints: config.breakpoints,
+
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
