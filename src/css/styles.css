@@ -183,6 +183,8 @@ select {
 @media (max-width: 767px) {
   .button {
     width: 100%;
+    font-size: 24px;
+    padding: 18px 32px;
   }
 }
 
@@ -637,7 +639,8 @@ main {
 
 @media (max-width: 767px) {
   .projects {
-    padding-top: 52px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 }
 
@@ -726,7 +729,7 @@ main {
 
 @media (max-width: 767px) {
   .about {
-    padding-top: 56px;
+    padding-top: 32px;
     padding-bottom: 56px;
   }
 }
@@ -897,6 +900,7 @@ main {
 @media (max-width: 767px) {
   .info-title {
     text-align: left;
+    margin-bottom: 32px;
   }
 }
 
@@ -906,16 +910,60 @@ main {
   margin: 0 auto;
 }
 
-@media (max-width: 767px) {
-  .info-description {
-    text-align: left;
-    width: 100%;
-  }
+.info-expand-button {
+  display: none;
 }
 
 .info-bottom-pic {
   margin: 0 auto;
   margin-top: 60px;
+}
+
+@media (max-width: 767px) {
+  .info-description {
+    --max-lines: 8;
+    --line-height: 1.5;
+
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+    max-height: calc(var(--max-lines) * 1em * var(--line-height));
+    line-height: var(--line-height);
+  }
+
+  .info-expand-button {
+    display: block;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--color-primary-dark70);
+  }
+
+  .info-description:has(+ .info-expand-button input:checked) {
+    max-height: none;
+  }
+
+  /* Show "Read More" when checkbox is NOT checked */
+  .info-expand-button input:not(:checked) + .info-expand-text-on {
+    display: block;
+  }
+  .info-expand-button input:not(:checked) + .info-expand-text-on + .info-expand-text-off {
+    display: none;
+  }
+
+  /* Show "Close" when checkbox is checked */
+  .info-expand-button input:checked + .info-expand-text-on {
+    display: none;
+  }
+  .info-expand-button input:checked + .info-expand-text-on + .info-expand-text-off {
+    display: block;
+  }
+
+  .info-bottom-pic {
+    margin-top: 32px;
+    width: 20%;
+  }
 }
 /* #endregion */
 
@@ -931,6 +979,7 @@ main {
   .contact {
     padding-top: 56px;
     padding-bottom: 56px;
+    background-color: var(--color-grey-90);
   }
 }
 
@@ -960,12 +1009,14 @@ main {
 @media (max-width: 767px) {
   .contact-title {
     margin-bottom: 32px;
+    font-size: 40px;
   }
 }
 
 @media (max-width: 767px) {
   .contact-info {
     margin-bottom: 32px;
+    font-size: 20px;
   }
 }
 /* #endregion */
@@ -1001,12 +1052,15 @@ main {
 }
 
 .form-input-error {
-  height: 48px;
+  min-height: 48px;
   width: 100%;
   font-size: 14px;
   font-weight: 400;
-  position: absolute;
+  position: relative;
   bottom: 0;
+  color: var(--color-system-error);
+  line-height: 1.5;
+  margin-top: 8px;
 }
 
 .form-group--error .form-input {
@@ -1019,15 +1073,6 @@ main {
 
 .form-group--error .form-input-error-text {
   display: inline;
-}
-
-.form-input-error {
-  color: var(--color-system-error);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-top: 8px;
-  position: relative;
 }
 
 .form-group--checkbox {
@@ -1099,13 +1144,6 @@ main {
   transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
 }
 
-@media (max-width: 767px) {
-  .form-input {
-    background-color: var(--color-grey-100) !important;
-    color: var(--color-grey-10) !important;
-  }
-}
-
 /* Chrome, Safari autofill styles */
 .form-input:-webkit-autofill,
 .form-input:-webkit-autofill:hover,
@@ -1164,13 +1202,6 @@ main {
   font-family: var(--font-primary);
 }
 
-@media (max-width: 767px) {
-  .select-styled {
-    background-color: var(--color-grey-100) !important;
-    color: var(--color-grey-10) !important;
-  }
-}
-
 .form-group--error .select-styled {
   border-bottom: 1px solid var(--color-system-error);
 }
@@ -1214,12 +1245,6 @@ main {
   background-color: var(--color-grey-80);
 }
 
-@media (max-width: 767px) {
-  .select-options {
-    background-color: var(--color-grey-90) !important;
-  }
-}
-
 .select-options li {
   margin: 0;
   padding: 10px 2px;
@@ -1249,8 +1274,21 @@ main {
   padding-bottom: 120px;
 }
 
+@media (max-width: 767px) {
+  .team {
+    padding-top: 56px;
+    padding-bottom: 32px;
+  }
+}
+
 .team-title {
   margin-bottom: 80px;
+}
+
+@media (max-width: 767px) {
+  .team-title {
+    margin-bottom: 32px;
+  }
 }
 
 .card {
@@ -1336,6 +1374,15 @@ main {
   border-bottom: 0.5px solid var(--color-primary-light100);
 }
 
+@media (max-width: 767px) {
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 56px;
+    column-gap: 32px;
+  }
+}
+
 .footer-copyright {
   margin-top: 40px;
   display: block;
@@ -1408,6 +1455,41 @@ main {
 .footer-link-container .social-links-link {
   padding: 10px;
 }
+
+@media (max-width: 767px) {
+
+  .footer-menu {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    column-gap: 0;
+    order: 3;
+  }
+
+  .footer-link {
+    padding: 12px 0;
+  }
+
+  .footer-logo {
+    order: 1;
+  }
+
+  .footer-contacts {
+    order: 2;
+  }
+
+  .footer-contacts-text {
+    display: none;
+  }
+
+  .footer-address-link {
+    margin-bottom: 6px;
+  }
+
+  .footer-link-container .social-links-link {
+    padding: 8px;
+  }
+}
+
 /* #endregion */
 
 /* #region =========  SLIDERS CUSTOMIZATION ============ */
@@ -1522,4 +1604,9 @@ main {
   grid-auto-flow: column;
 }
 
+@media (max-width: 1439px) {
+  .swiper-team .swiper-wrapper {
+    grid-template-rows: repeat(1, 1fr);
+  }
+}
 /* #endregion */

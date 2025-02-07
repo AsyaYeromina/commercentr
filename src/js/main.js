@@ -11,8 +11,6 @@
   // Adjust minimal length for name validation if needed
   const MINIMAL_NAME_LENGTH = 3;
 
-  console.log("script is here");
-
   // Form Submission Handler
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -30,8 +28,6 @@
       email: email.value.trim(),
       title: select.value,
     };
-
-    console.log(formData);
 
     // Submit form data via AJAX
     // try {
