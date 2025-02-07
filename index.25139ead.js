@@ -37,7 +37,7 @@ const swiperProjects = initializeSwiper('.swiper-projects', {
     }
 });
 const swiperTeam = initializeSwiper('.swiper-team', {
-    slidesPerView: 4,
+    slidesPerView: 1.25,
     spaceBetween: 32,
     breakpoints: {
         768: {
@@ -47,7 +47,7 @@ const swiperTeam = initializeSwiper('.swiper-team', {
             slidesPerView: 3.5
         },
         1440: {
-            slidesPerView: 3
+            slidesPerView: 4
         }
     }
 });
