@@ -7,7 +7,7 @@ const swiperServices = initializeSwiper('.swiper-services', {
       slidesPerView: 2.5,
     },
     1024: {
-      slidesPerView: 3.5,
+      slidesPerView: 3.3,
     },
     1440: {
       grid: { rows: 2, fill: 'column' },
