@@ -77,7 +77,7 @@ html {
 
 body {
   color: var(--color-grey-10);
-  background-color: var(--color-grey-85);
+  background-color: var(--color-grey-100);
   position: relative;
   height: 100%;
   width: 100%;
@@ -750,6 +750,13 @@ main {
   }
 }
 
+@media (max-width: 767px) {
+  .projects-info {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
 
 /* #endregion */
 
@@ -933,7 +940,6 @@ main {
 @media (max-width: 767px) {
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
-
   }
 }
 
@@ -991,14 +997,27 @@ main {
     margin-bottom: 32px;
   }
 
+  .info-description-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .info-description {
     --max-lines: 8;
-    --line-height: 1.5;
+    --line-height: 1.5em;
 
+    order: -1;
     text-align: left;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
     max-height: calc(var(--max-lines) * 1em * var(--line-height));
     line-height: var(--line-height);
+  }
+
+  .info-description-container:has(input:checked) .info-description {
+    display: block;
   }
 
   .info-expand-button {
@@ -1011,9 +1030,6 @@ main {
     color: var(--color-primary-dark70);
   }
 
-  .info-description:has(+ .info-expand-button input:checked) {
-    max-height: none;
-  }
 
   /* Show "Read More" when checkbox is NOT checked */
   .info-expand-button input:not(:checked) + .info-expand-text-on {
@@ -1119,7 +1135,7 @@ main {
 }
 
 .form-input {
-  background-color: inherit;
+  background-color: var(--color-grey-90);
   color: var(--color-grey-0);
   font-size: 14px;
   font-weight: 400;
@@ -1344,6 +1360,31 @@ main {
   display: none;
 }
 
+@media (max-width: 767px) {
+  .form-label {
+    margin-bottom: 24px;
+  }
+
+  .form-checkbox-label {
+    margin-bottom: 0;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-input-error {
+    min-height: 36px;
+    line-height: 1;
+    margin-top: 4px;
+  }
+
+  .form-button {
+    margin-top: 56px;
+  }
+
+}
+
 /* #endregion */
 
 /* #region =========  Section: TEAM ============ */
@@ -1354,21 +1395,8 @@ main {
   padding-bottom: 120px;
 }
 
-@media (max-width: 767px) {
-  .team {
-    padding-top: 56px;
-    padding-bottom: 32px;
-  }
-}
-
 .team-title {
   margin-bottom: 80px;
-}
-
-@media (max-width: 767px) {
-  .team-title {
-    margin-bottom: 32px;
-  }
 }
 
 .card {
@@ -1377,6 +1405,10 @@ main {
   align-items: center;
   background-color: var(--color-grey-90);
   overflow: hidden;
+}
+
+.card-picture {
+  width: 100%;
 }
 
 .card-image {
@@ -1423,14 +1455,30 @@ main {
 
 .social-links-link {
   display: block;
-  padding: 14px;
+  padding: 10px;
 }
 
 .social-links-link svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 25px;
   stroke: var(--color-grey-30);
   margin: auto;
+}
+
+@media (max-width: 1439px) {
+  .team {
+    padding-top: 56px;
+    padding-bottom: 32px;
+  }
+
+  .team-title {
+    margin-bottom: 32px;
+  }
+
+  .social-links-link svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* #endregion */
@@ -1439,6 +1487,7 @@ main {
 
 .footer {
   padding: 52px 0;
+  background-color: var(--color-grey-85)
 }
 
 .footer-logo {
@@ -1529,7 +1578,7 @@ main {
 }
 
 .footer-link-container {
-  margin-left: -10px;
+  margin-left: -12px;
 }
 
 .footer-link-container .social-links-link {
@@ -1541,12 +1590,17 @@ main {
   .footer-menu {
     grid-column-start: 1;
     grid-column-end: 3;
-    column-gap: 0;
+    column-gap: 32px;
     order: 3;
   }
 
   .footer-link {
     padding: 12px 0;
+  }
+
+  .footer-link::after {
+    left: 0;
+    right: 0;
   }
 
   .footer-logo {
