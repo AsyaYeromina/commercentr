@@ -509,11 +509,6 @@ main {
 }
 
 /* adding overlay for dimming the body */
-.body--header-modal .overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
 .overlay {
   position: fixed;
   top: 0;
@@ -524,8 +519,13 @@ main {
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  /* transition: opacity 0.2s ease-in-out, visibility 0.2s; */
 }
+
+.body--header-modal .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* #endregion */
 
 /* #region =========  Section: HERO ============ */

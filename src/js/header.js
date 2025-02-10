@@ -21,4 +21,4 @@ if (body !== null && header !== null && burgerButton !== null) {
   });
 }
 
-// Body on other pages (not index) should has "body" class
+// Body on other pages (not index) should has "body--header-collapsed" class
