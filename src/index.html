@@ -38,9 +38,13 @@
           <a href="#" class="header-logo" aria-label="Commercentr logo">
             <picture>
               <!-- Mobile version -->
-              <source srcset="/src/img/logo.svg" media="(max-width: 767px)">
+              <source srcset="/src/img/logo.svg" media="(max-width: 767px)" />
               <!-- Default (Desktop) version -->
-              <img src="/src/img/logo-full.svg" alt="Company logo" class="header-logo-pic logo">
+              <img
+                src="/src/img/logo-full.svg"
+                alt="Company logo"
+                class="header-logo-pic logo"
+              />
             </picture>
           </a>
           <nav class="header-nav" aria-label="Головна навігація">
@@ -70,30 +74,19 @@
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-              >
-                <span
-                  >UA
-                  <!-- <?php echo ${"text_language_$active_language"}; ?> -->
-                </span>
+                class="language-dropdown"
+                >
+                <!-- language-dropdown--shown when clicked -->
+                <span>UA</span>
               </div>
 
-              <!-- <div
-                class="languageDropdown-menu"
-                aria-labelledby="languageDropdown"
-              > -->
-              <!-- <?php foreach ($languages as $language_name => $code) { ?> -->
-
-              <!-- <div
-                  class="languageDropdown-item cursor-pointer"
-                  onclick="changeLanguage('<?php echo strtolower($language_name); ?>')"
-                >
-                  <span
-                    >EN -->
-              <!-- <?php echo $text_language[$language_name]; ?> -->
-              <!-- </span>
+              <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                <div class="dropdown-item">
+                  <span>EN</span>
                 </div>
-              </div> -->
+              </div>
             </div>
+
           </nav>
           <a href="#contact" class="button button--small header-call-button"
             >Написати</a
@@ -111,7 +104,11 @@
                 Банер Інформація може бути тут
               </h1>
               <picture class="hero-image">
-                <img src="/src/img/logo.svg" class="hero-logo logo" alt="Commercentr Logo">
+                <img
+                  src="/src/img/logo.svg"
+                  class="hero-logo logo"
+                  alt="Commercentr Logo"
+                />
               </picture>
               <p class="hero-description">
                 Побудова безпечних і катастрофостійких систем термінальних
@@ -596,8 +593,8 @@
 
                 <!-- Default fallback image -->
                 <img src="https://dummyimage.com/600x300/555555/fff.jpg" "
-                alt="Project 1 background" class="about-image"
-                width="592"; height="280"; >
+                alt="Project 1 background" class="about-image" width="592";
+                height="280"; >
               </picture>
               <p class="about-description">
                 Побудова безпечних і катастрофостійких систем сервісів
@@ -807,7 +804,7 @@
             </h2>
             <div class="info-description-container">
               <label class="info-expand-button">
-                <input type="checkbox">
+                <input type="checkbox" />
                 <span class="info-expand-text-on">Read More</span>
                 <span class="info-expand-text-off">Close</span>
               </label>
@@ -821,17 +818,21 @@
                 зберігання даних. ОцінкаІТ-інфраструктури в різних аспектах,
                 рекомендації щодо оптимізації. Побудова безпечних і додатків
                 катастрофостійких систем сервісів термінальних сервісів.
-                Віртуалізація серверів, додатків, мереж і даних систем зберігання
-                даних. ОцінкаІТ-інфраструктури в різних аспектах, рекомендації
-                щодо оптимізації. систем Побудова безпечних і катастрофостійких
-                систем сервісів термінальних сервісів. Віртуалізація серверів,
-                додатків, мереж і даних систем зберігання даних.
-                ОцінкаІТ-інфраструктури в різних аспектах, рекомендації щодо
-                оптимізації.
+                Віртуалізація серверів, додатків, мереж і даних систем
+                зберігання даних. ОцінкаІТ-інфраструктури в різних аспектах,
+                рекомендації щодо оптимізації. систем Побудова безпечних і
+                катастрофостійких систем сервісів термінальних сервісів.
+                Віртуалізація серверів, додатків, мереж і даних систем
+                зберігання даних. ОцінкаІТ-інфраструктури в різних аспектах,
+                рекомендації щодо оптимізації.
               </p>
             </div>
             <picture class="info-picture">
-              <img src="/src/img/logo.svg" alt="Company logo" class="info-picture-img logo">
+              <img
+                src="/src/img/logo.svg"
+                alt="Company logo"
+                class="info-picture-img logo"
+              />
             </picture>
           </div>
         </section>
@@ -842,7 +843,9 @@
             <div class="contact-container">
               <div class="contact-title-container">
                 <h2 class="section-title contact-title">Анкета</h2>
-                <p class="contact-info">Заповни анкету, щоб отримати консультацію</p>
+                <p class="contact-info">
+                  Заповни анкету, щоб отримати консультацію
+                </p>
               </div>
 
               <form
@@ -1835,12 +1838,19 @@
               class="footer-logo"
               aria-label="Посилиння на головну сторінку сайту"
             >
-            <picture>
-              <!-- Mobile and tablet version -->
-              <source srcset="/src/img/logo.svg" media="(max-width: 1439px)">
-              <!-- Default (Desktop) version -->
-              <img src="/src/img/logo-full.svg" alt="Company logo" class="footer-logo-picture logo">
-            </picture>
+              <picture>
+                <!-- Mobile and tablet version -->
+                <source
+                  srcset="/src/img/logo.svg"
+                  media="(max-width: 1439px)"
+                />
+                <!-- Default (Desktop) version -->
+                <img
+                  src="/src/img/logo-full.svg"
+                  alt="Company logo"
+                  class="footer-logo-picture logo"
+                />
+              </picture>
             </a>
             <ul class="footer-menu">
               <li class="footer-menu-item">

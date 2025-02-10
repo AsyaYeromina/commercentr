@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  let lang_select = document.getElementById('lang');
+  let lang_select = document.getElementById('languageDropdown');
   let target_input = document.getElementById('target');
   let language_url = document.getElementById('changer');
 
