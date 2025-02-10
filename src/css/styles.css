@@ -935,6 +935,11 @@ main {
     width: 32px;
     height: 32px;
   }
+
+  .values-icon svg {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 @media (max-width: 767px) {
