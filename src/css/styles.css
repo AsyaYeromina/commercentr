@@ -1237,7 +1237,6 @@ main {
 .form-input {
   appearance: none;
   box-shadow: none !important;
-  border: none !important;
   background-color: var(--color-grey-90) !important;
   color: var(--color-grey-10) !important;
   transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
