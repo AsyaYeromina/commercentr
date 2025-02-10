@@ -25,17 +25,22 @@
     <link rel="stylesheet" href="/src/css/styles.css" />
     <link rel="icon" href="/src/img/favicon.png" type="image/png" />
   </head>
-  <body>
+  <body class="body body--header-modal">
     <div class="main-container">
       <!-- Header -->
       <header class="header">
         <div class="container header-container">
+          <button class="header-burger-button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <a href="#" class="header-logo" aria-label="Commercentr logo">
             <picture>
               <!-- Mobile version -->
               <source srcset="/src/img/logo.svg" media="(max-width: 767px)">
               <!-- Default (Desktop) version -->
-              <img src="/src/img/logo-full.svg" alt="Company logo" class="header-logo logo">
+              <img src="/src/img/logo-full.svg" alt="Company logo" class="header-logo-pic logo">
             </picture>
           </a>
           <nav class="header-nav" aria-label="Головна навігація">
@@ -1981,6 +1986,7 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
       defer
     ></script>
+    <script src="js/header.js" defer></script>
     <script src="js/slider.js" defer></script>
     <script src="js/main.js" defer></script>
   </body>
