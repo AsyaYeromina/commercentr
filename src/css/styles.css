@@ -36,6 +36,9 @@
   --medium-width: 768px; /* iPad */
   --small-width: 393px; /* iPhone 6/7/8 */
 
+  --container-padding-desktop: 112px;
+  --container-padding-mobile: 24px;
+
   /* header */
   --min-header-height: 60px;
   --mobile-header-height: 72px;
@@ -227,32 +230,18 @@ select {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 112px;
+  padding: 0 var(--container-padding-desktop);
 }
 
 @media (max-width: 1439px) {
   .container {
-    /* max-width: calc(393px); */
-    padding: 0 24px;
+    padding: 0 var(--container-padding-mobile);
   }
 }
 
 main {
   flex: 1;
 }
-
-/*
-@media (min-width: 768px) {
-  .wrapper {
-      width: calc(768px - 80px);
-  }
-} */
-
-/* @media (min-width: 1440px) {
-  .wrapper {
-      width: calc(1440px - 120px);
-  }
-} */
 
 /* #endregion */
 
@@ -1840,12 +1829,6 @@ main {
   margin-top: 52px;
 }
 
-@media (max-width: 1439px) {
-  .swiper-navigation {
-    margin-top: 0;
-  }
-}
-
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
@@ -1909,10 +1892,18 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-auto-flow: column;
-  /* row-gap: 48px; */
 }
 
 @media (max-width: 1439px) {
+  .swiper {
+    width: calc(100% + var(--container-padding-mobile));
+  }
+
+  .swiper-navigation {
+    margin-top: 0;
+    margin-right: var(--container-padding-mobile);
+  }
+
   .swiper-services .swiper-wrapper {
     grid-template-rows: repeat(1, 1fr);
   }
