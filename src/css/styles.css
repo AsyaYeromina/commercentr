@@ -960,27 +960,40 @@ main {
 }
 
 .about-inner-container {
-  background-color: var(--color-grey-85);
   padding: 80px 100px;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
 }
 
 .about-title {
   margin-bottom: 48px;
   width: 50%;
+  z-index: 2;
+  position: relative;
 }
 
 .about-description {
   margin-bottom: 48px;
   width: 50%;
+  z-index: 2;
+  position: relative;
 }
 
 .about-picture {
-  display: none;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .about-image {
   width: 100%;
   height: 100%;
+  z-index: 2;
+  position: relative;
   object-fit: cover;
 }
 
@@ -991,7 +1004,6 @@ main {
   }
 
   .about-inner-container {
-    background-color: transparent;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1013,6 +1025,7 @@ main {
     grid-column: 2 / 3;
     grid-row: 1 / 4;
     display: block;
+    position: relative;
   }
 
   .about-description {
