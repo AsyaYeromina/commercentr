@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="/src/css/styles.css" />
     <link rel="icon" href="/src/img/favicon.png" type="image/png" />
   </head>
-  <body class="body body--header-collapsed">
+  <body>
     <div class="main-container">
       <!-- Header -->
       <header class="header">
@@ -67,24 +67,24 @@
               </li>
             </ul>
 
-            <div class="header-language-container">
-              <div
-                id="languageDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
+            <div
+              class="header-language-dropdown language-dropdown"
+              id="languageContainer"
+              >
+              <button
+                id="languageDropdownBtn"
                 aria-haspopup="true"
                 aria-expanded="false"
-                class="language-dropdown"
+                class="language-button"
                 >
-                <!-- language-dropdown--shown when clicked -->
                 <span>UA</span>
-              </div>
+              </button>
 
-              <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                <div class="dropdown-item">
+              <ul class="language-list visually-hidden" aria-labelledby="languageDropdownBtn">
+                <li class="language-list-item">
                   <span>EN</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
 
           </nav>
@@ -1992,12 +1992,12 @@
         </div>
       </footer>
     </div>
+    <script src="js/header.js" defer></script>
+    <script src="js/main.js" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
       defer
     ></script>
-    <script src="js/header.js" defer></script>
     <script src="js/slider.js" defer></script>
-    <script src="js/main.js" defer></script>
   </body>
 </html>
