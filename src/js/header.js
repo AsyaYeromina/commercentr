@@ -1,8 +1,10 @@
 // header hiding/showing
 document.addEventListener("DOMContentLoaded", function () {
   const burgerButton = document.querySelector(".header-burger-button");
+  const header = document.querySelector(".header");
+  const headerLinks = header.querySelectorAll("a");
 
-  if (!burgerButton) return; // Exit if button is missing
+  if (!burgerButton || !header) return;
 
   function openModal() {
     document.body.classList.add("modal-open");
@@ -15,17 +17,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function toggleModal(event) {
-    event.stopPropagation(); // Prevent event from triggering close immediately
+    event.stopPropagation();
     document.body.classList.contains("modal-open") ? closeModal() : openModal();
   }
 
   function closeModalOnOutsideClick(event) {
-    if (!burgerButton.contains(event.target)) {
+    if (!burgerButton.contains(event.target) && !header.contains(event.target)) {
       closeModal();
     }
   }
 
+  function closeModalOnLinkClick() {
+    closeModal(); // Close modal when a menu link is clicked
+  }
+
   burgerButton.addEventListener("click", toggleModal);
+  headerLinks.forEach(link => link.addEventListener("click", closeModalOnLinkClick));
 });
 
 
@@ -43,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       //hiding language list and solving acesibility isues
       languageList.classList.toggle('visually-hidden');
-
       languageContainer.classList.toggle('language-dropdown--open');
 
       // Update aria-expanded attribute
